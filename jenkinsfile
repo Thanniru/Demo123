@@ -1,0 +1,20 @@
+pipeline {
+     agent any
+	 stages {
+			stage ('compile and build') {
+								steps {
+								echo 'Hello this is sample demo'
+								}
+				}
+			stage ('integration test') {
+								steps {
+								 input('Do you want to procees for deployment?')
+								}
+			 }
+			 stage ('Deploying into QA') {
+			 steps {
+			 echo "Deploying the artifatcs"
+			 }
+			 }
+		}
+	}
